@@ -1,0 +1,21 @@
+img {
+    max-width: 30%;    
+}
+
+h1 {
+    font-size: 14pt;
+    color: blue;
+
+}
+
+p {
+    font-size: 9pt;
+}
+
+article:first-child h3 {
+    font-size: 16pt;
+}
+
+article:first-child p {
+    font-size: 11pt;
+}
