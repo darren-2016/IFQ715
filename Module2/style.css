@@ -23,3 +23,7 @@ article:first-child p {
 .flex-container {
     display: flex;
 }
+
+.space-between {
+    justify-content: space-between;
+}
