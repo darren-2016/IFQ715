@@ -46,3 +46,21 @@ article:first-child p {
 section {
     margin-top: 1rem;
 }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.width-25 {
+    width:25%;
+}
+
+.featured-article {
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.featured-article-inner {
+    background-color: burlywood;
+    padding: 0.5rem;
+}
