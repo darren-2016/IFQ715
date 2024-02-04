@@ -27,3 +27,11 @@ article:first-child p {
 .space-between {
     justify-content: space-between;
 }
+
+.align-items-center {
+    align-items: center;
+}
+
+.gap1 {
+    gap: 1rem;
+}
