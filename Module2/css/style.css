@@ -35,3 +35,14 @@ article:first-child p {
 .gap1 {
     gap: 1rem;
 }
+
+.width-100 {
+    width:100%;
+}
+.center-text {
+    text-align: center;
+}
+
+section {
+    margin-top: 1rem;
+}
