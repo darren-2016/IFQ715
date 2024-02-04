@@ -1,6 +1,6 @@
-img {
+/* img {
     max-width: 30%;    
-}
+} */
 
 h1 {
     font-size: 14pt;
@@ -39,6 +39,7 @@ article:first-child p {
 .width-100 {
     width:100%;
 }
+
 .center-text {
     text-align: center;
 }
@@ -72,4 +73,10 @@ section {
 .weather-column {
     flex: 1;
     padding: 10px;
+}
+
+.wide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
