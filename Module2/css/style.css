@@ -64,3 +64,12 @@ section {
     background-color: burlywood;
     padding: 0.5rem;
 }
+
+.weather-detail {
+    flex-direction: row;
+}
+
+.weather-column {
+    flex: 1;
+    padding: 10px;
+}
