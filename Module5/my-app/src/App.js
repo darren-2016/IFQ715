@@ -44,45 +44,29 @@ export default function App() {
       <h1>Hello!</h1>
       <h2>Start editing to see some magic happen!</h2>
       {animals.map((animal) => (
-        <AnimalComponent name={animal.name} number={animal.number} />
+        // <AnimalComponent name={animal.name} number={animal.number} />
+        <AnimalComponent {...animal} />
       ))}
-      <AnimalComponent name="Lion" number={35} />
     </div>
   );
 }
 
-function AnimalComponent(props) {
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      <p>{props.number}</p>
-    </div>
-  );
-}
-
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
+// function AnimalComponent(props) {
 //   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
+//     <div>
+//       <h1>{props.name}</h1>
+//       <p>{props.number}</p>
 //     </div>
 //   );
 // }
 
-// export default App;
+
+function AnimalComponent({ name, number, eats}) {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{number}</p>
+    </div>
+  );
+}
+
