@@ -3,10 +3,19 @@ export default function App() {
     <div className="App">
       <h1>Hello!</h1>
       <h2>Start editing to see some magic happen!</h2>
-      <p>{1 / 7}</p>
+      <AnimalComponent name="Lion" number={35} />
     </div>
   );
 }
+function AnimalComponent(props) {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <p>{props.number}</p>
+    </div>
+  );
+}
+
 
 // import logo from './logo.svg';
 // import './App.css';
