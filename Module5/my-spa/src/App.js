@@ -1,4 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Location from "./Location";
+import Login from "./User/Login";
+import Register from "./User/Register";
+
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+
 
 function App() {
   return (
@@ -16,30 +24,6 @@ function App() {
     </div>
     </BrowserRouter>
   );
-}
-
-function Home() {
-  return <h1>Home</h1>;
-}
-
-function Location() {
-  return <h1>Location</h1>;
-}
-
-function Login() {
-  return <h1>Login</h1>;
-}
-
-function Register() {
-  return <h1>Regsiter</h1>;
-}
-
-function Header() {
-  return <p>Header</p>;
-}
-
-function Footer() {
-  return <p>Footer</p>;
 }
 
 export default App;
