@@ -1,3 +1,4 @@
+import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -12,8 +13,7 @@ import Footer from "./Components/Footer";
 function App() {
   return (
     <BrowserRouter>
-      <div className="d-flex flex-column bg-light">
-        <div className="App">
+      <div className="d-flex flex-column bg-light" id="wrapper">
           <Header />
             <Container fluid className="pt-2">
               {/* content */}
@@ -23,7 +23,6 @@ function App() {
               </Routes>
             </Container>
           <Footer />
-        </div>
       </div>
     </BrowserRouter>
   );
