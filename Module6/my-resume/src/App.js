@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
+import Home from "./Home";
+import Contact from "./Contact";
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,13 +20,6 @@ function App() {
   );
 }
 
-function Home() {
-  return <h1>Home</h1>;
-}
-
-function Contact() {
-  return <h1>Contact</h1>;
-}
 
 function Header() {
   return <p>Header</p>;
