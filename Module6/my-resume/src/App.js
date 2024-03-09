@@ -6,31 +6,27 @@ import './App.css';
 import Home from "./Home";
 import Contact from "./Contact";
 
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+
 function App() {
   return (
     <BrowserRouter>
       <div className="d-flex flex-column bg-light">
         <div className="App">
           <Header />
-          {/* content */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+            <Container fluid className="pt-2">
+              {/* content */}
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Container>
           <Footer />
         </div>
       </div>
     </BrowserRouter>
   );
 }
-
-
-function Header() {
-  return <p>Header</p>;
- }
-
- function Footer() {
-  return <p>Footer</p>;
- }
 
 export default App;
