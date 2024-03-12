@@ -18,15 +18,6 @@ const carouselData = [
     },
 ];
 
-
-export default function HeroCarousel() {
-    return (
-        <Carousel className="d-none d-sm-block">
-            {carouselData.map(CarouselImage)}
-        </Carousel>
-    );
-}
-
 function CarouselImage({ image, heading, caption }) {
     return (
         <Carousel.Item key={image}>
@@ -36,5 +27,13 @@ function CarouselImage({ image, heading, caption }) {
                 <p>{caption}</p>
             </Carousel.Caption>
         </Carousel.Item>
+    );
+}
+
+export default function HeroCarousel() {
+    return (
+        <Carousel className="d-none d-sm-block">
+            {carouselData.map(CarouselImage)}
+        </Carousel>
     );
 }

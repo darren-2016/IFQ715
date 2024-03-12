@@ -4,12 +4,19 @@ import { useNavigate } from "react-router-dom";
 import { useWeather } from "../api";
 
 export default function City({ city }) {
+    // let { loading, weather, error } = useWeather(city);
     let { location, current } = useWeather(city);
+    // console.log(location);
+    // console.log('loading = ' + loading);
+    // console.log('error = ' + error);
+    // console.log('weather = ' + weather);
+    
 
     const navigate = useNavigate();
 
     return (
         <Col md={6} lg={3} key={city}>
+            {/* {!loading && !error ? ( */}
             <Card className="  full-width-card">
                 <Card.Img
                     variant="top"
@@ -55,6 +62,7 @@ export default function City({ city }) {
                 </Card.Body>
 
             </Card>
+            {/* ) : null } */}
         </Col>
     );
 }
