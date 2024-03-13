@@ -15,14 +15,31 @@ export default function City({ city }) {
 
     const navigate = useNavigate();
 
+    const weatherIcons = {
+        "Clear": "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_2-512.png",
+        "Overcast": "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-22-512.png",
+        "Partly cloudy": "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_2-256.png",
+        "Sunny": "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png",
+        "Rain": "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_6-256.png"
+    };
+
+    const getWeatherImage = () => {
+        if (!weather || !weather.current) return null;
+        return weatherIcons[weather.current.condition.text] || weatherIcons["Clear"];
+        // return "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-512.png" // Sunny
+        // return "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_2-512.png"; // Cloudy
+        // return "https://picsum.photos/id/10/200/100";
+    };
+
     return (
         <Col md={6} lg={3} key={city}>
             {!loading && !error ? (
             <Card className="  full-width-card">
                 <Card.Img
                     variant="top"
-                    src="https://picsum.photos/id/10/200/100"
-                    alt="..."
+                    // src="https://picsum.photos/id/10/200/100"
+                    src={getWeatherImage()}
+                    alt="Icon"
                 />
 
                 <div className="d-flex justify-content-between p-3 text-bg-secondary">
