@@ -45,13 +45,40 @@ const fakeCity = {
     },
    };
 
-   export function useWeather(city) {
+   export function useWeather4(city) {
     return fakeCity;
    }
-   
-   export function getCurrentWeatherByQuery(query) {
+
+   export function useWeather(city) {
+    const [loading, setLoading] = useState(false);
+    const [weather, setWeather] = useState();
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+      setLoading(true);
+      getCurrentWeatherByQuery(city)
+      .then((weather) => {
+        setWeather(weather);
+      })
+      .catch((error) => {
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+    }, [city]);
+
+    return {
+      loading: loading,
+      weather: weather,
+      error: error,
+    };
+    // return fakeCity;
+   }
+
+   export function getCurrentWeatherByQuery(city) {
     const API_KEY = "889c4757807b42ec98a21636231510";
-    const url = `http://api.weatherapi.com/v1/current.json?q=${query}&key=${API_KEY}`;
+    const url = `http://api.weatherapi.com/v1/current.json?q=${city}&key=${API_KEY}`;
 
     return fetch(url)
       .then((res) => res.json())

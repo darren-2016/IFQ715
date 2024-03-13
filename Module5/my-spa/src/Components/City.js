@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useWeather } from "../api";
 
 export default function City({ city }) {
-    // let { loading, weather, error } = useWeather(city);
-    let { location, current } = useWeather(city);
+    let { loading, weather, error } = useWeather(city);
+
+    // let { location, current } = useWeather(city);
     // console.log(location);
     // console.log('loading = ' + loading);
     // console.log('error = ' + error);
@@ -16,7 +17,7 @@ export default function City({ city }) {
 
     return (
         <Col md={6} lg={3} key={city}>
-            {/* {!loading && !error ? ( */}
+            {!loading && !error ? (
             <Card className="  full-width-card">
                 <Card.Img
                     variant="top"
@@ -25,30 +26,30 @@ export default function City({ city }) {
                 />
 
                 <div className="d-flex justify-content-between p-3 text-bg-secondary">
-                    <h5 className="">{location?.name}</h5>
-                    <div className="subheading">{location?.localtime}</div>
+                    <h5 className="">{weather?.location.name}</h5>
+                    <div className="subheading">{weather?.location.localtime}</div>
                 </div>
 
                 <Card.Body>
                     <div className="fw-lighter">Country:</div>
-                    <p>{location?.country}</p>
+                    <p>{weather?.location.country}</p>
 
                     <div className="fw-lighter">Region:</div>
-                    <p>{location?.region}</p>
+                    <p>{weather?.location.region}</p>
 
                     <div className="d-flex">
                         <div className="me-4">
                             <div className="fw-lighter">Lat:</div>
-                            <p>{location?.lat}</p>
+                            <p>{weather?.location.lat}</p>
                         </div>
                         <div>
                             <div className="fw-lighter">Lon:</div>
-                            <p>{location?.lon}</p>
+                            <p>{weather?.location.lon}</p>
                         </div>
                     </div>
 
                     <div className="fw-lighter">Timezone:</div>
-                    <p>{location?.tz_id}</p>
+                    <p>{weather?.location.tz_id}</p>
 
                     <Button
                         mt="auto"
@@ -62,7 +63,7 @@ export default function City({ city }) {
                 </Card.Body>
 
             </Card>
-            {/* ) : null } */}
+            ) : null }
         </Col>
     );
 }
