@@ -6,6 +6,8 @@ export default function TextField({
     type,
     size,
     Component = Form.Control,
+    value,
+    onChange,
 }) {
     let id = `input${text}`;
     return (
@@ -13,7 +15,15 @@ export default function TextField({
             <Form.Label htmlFor={id} column="sm-2">
                 {text}
             </Form.Label>
-            <Component type={type} id={id} placeholder={placeholder} />
+            <Component 
+                type={type} 
+                id={id} 
+                placeholder={placeholder} 
+                value={value} 
+                onChange={(event) => {
+                    onChange(event.target.value);
+                }}
+            />
         </Col>
     );
 }
