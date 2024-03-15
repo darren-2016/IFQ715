@@ -2,6 +2,7 @@
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { Alert } from "react-bootstrap";
 
 import TextField from "../TextField";
 
@@ -26,7 +27,8 @@ export default function Login() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-API-KEY": "889c4757807b42ec98a21636231510",
+        "X-API-KEY": "EzensCqxyl63t09mVG6jr2AXriDQeimS95s4CdpV",
+        // "X-API-KEY": "889c4757807b42ec98a21636231510",
       },
       body: JSON.stringify({
         email: email,
@@ -56,11 +58,11 @@ export default function Login() {
           </Col>
           <Col md={6} lg={7}>
             <h1 className="mb-5">Login</h1>
-
+            {message ? <Alert variant="danger">{message}</Alert> : null}
             <Form>
               <TextField text="Email" type="email" onChange={setEmail} value={email}/>
               <TextField text="Password" type="password" onChange={setPassword} value={password} />
-              <Button type="submit" variant="primary" className="mt-3">
+              <Button type="submit" variant="primary" className="mt-3" onClick={(event) => handleLogin(event)}>
                 Login
               </Button>
             </Form>
