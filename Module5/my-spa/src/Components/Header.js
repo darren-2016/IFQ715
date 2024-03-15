@@ -7,7 +7,11 @@ function HighlightLink(props) {
     return <Nav.Link {...props} active={match} />;
 }
 
-export default function Header({ isLoggedIn }) {
+export default function Header({ isLoggedIn, setIsLoggedIn }) {
+    const handleLogOut = () => {
+        localStorage.removeItem("token");
+        setIsLoggedIn(false);
+    };
     return (
         <header>
             <Navbar bg="primary" expand="md" variant="dark">
@@ -29,6 +33,11 @@ export default function Header({ isLoggedIn }) {
                                     Register
                                 </HighlightLink>
                             ) : null}
+                            {isLoggedIn ? (
+                                <HighlightLink to="/" as={Link} onClick={handleLogOut}>
+                                    Logout
+                                </HighlightLink>
+                            ) :null}
                         </Nav>
                         <form className="d-flex" role="search">
                             <Form.Control

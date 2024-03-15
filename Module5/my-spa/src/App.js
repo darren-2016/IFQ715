@@ -22,7 +22,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="d-flex flex-column bg-light" id="wrapper">
-        <Header isLoggedIn={isLoggedIn} />
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Container fluid className="pt-2">
           <Routes>
             <Route path="/" element={<Home />} />
