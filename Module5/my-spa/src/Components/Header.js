@@ -7,7 +7,7 @@ function HighlightLink(props) {
     return <Nav.Link {...props} active={match} />;
 }
 
-export default function Header() {
+export default function Header({ isLoggedIn }) {
     return (
         <header>
             <Navbar bg="primary" expand="md" variant="dark">
@@ -19,12 +19,16 @@ export default function Header() {
                             <HighlightLink to="/" as={Link}>
                                 Home
                             </HighlightLink>
-                            <HighlightLink to="/login" as={Link}>
-                                Login
-                            </HighlightLink>
-                            <HighlightLink to="/register" as={Link}>
-                                Register
-                            </HighlightLink>
+                            {!isLoggedIn ? (
+                                <HighlightLink to="/login" as={Link}>
+                                    Login
+                                </HighlightLink>
+                            ) : null}
+                            {!isLoggedIn ? (
+                                <HighlightLink to="/register" as={Link}>
+                                    Register
+                                </HighlightLink>
+                            ) : null}
                         </Nav>
                         <form className="d-flex" role="search">
                             <Form.Control

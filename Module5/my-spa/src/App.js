@@ -16,16 +16,21 @@ import{ getCurrentWeatherByQuery } from "./api";
 
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("token") ? true : false
+  );
   return (
     <BrowserRouter>
       <div className="d-flex flex-column bg-light" id="wrapper">
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <Container fluid className="pt-2">
-        {/* the content */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/location" element={<Location />} />
-            <Route path="/login" element={<Login />} />
+            <Route 
+              path="/login" 
+              element={<Login setIsLoggedIn={setIsLoggedIn} 
+            />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </Container>
